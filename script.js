@@ -73,27 +73,46 @@
   });
 
 
-  // HEX fields stay in sync with the native colour controls and live previews.
+  // HEX editor: never overwrite text while the user is typing.
   document.querySelectorAll(".color-hex[data-color-for]").forEach(hex => {
     const color = document.getElementById(hex.dataset.colorFor);
     if (!color) return;
-    const syncHex = () => { hex.value = color.value.toUpperCase(); };
-    color.addEventListener("input", syncHex);
+    const syncFromPicker = () => { hex.value = color.value.toUpperCase(); };
+    color.addEventListener("input", () => {
+      syncFromPicker();
+      if (tagColorOne || gradientColors.some(Boolean)) {
+        updateTagPreview();
+        updateGradientPreview();
+      }
+    });
     hex.addEventListener("input", () => {
       const value = hex.value.trim();
-      if (/^#?[0-9a-fA-F]{6}$/.test(value)) {
-        color.value = value.startsWith("#") ? value : "#" + value;
-        color.dispatchEvent(new Event("input", {bubbles:true}));
+      const normalized = value.startsWith("#") ? value : "#" + value;
+      if (/^#[0-9a-fA-F]{6}$/.test(normalized)) {
+        color.value = normalized;
         hex.setCustomValidity("");
+        updateTagPreview();
+        updateGradientPreview();
       } else if (value.length) {
-        hex.setCustomValidity("Enter a 6-digit HEX colour, for example #AABBCC.");
-      } else hex.setCustomValidity("");
+        hex.setCustomValidity("Enter a complete 6-digit HEX colour, for example #AABBCC.");
+      } else {
+        hex.setCustomValidity("");
+      }
     });
     hex.addEventListener("change", () => {
-      if (hex.value && !/^#?[0-9a-fA-F]{6}$/.test(hex.value.trim())) hex.reportValidity();
-      else syncHex();
+      const value = hex.value.trim();
+      const normalized = value.startsWith("#") ? value : "#" + value;
+      if (/^#[0-9a-fA-F]{6}$/.test(normalized)) {
+        color.value = normalized;
+        hex.value = normalized.toUpperCase();
+        updateTagPreview();
+        updateGradientPreview();
+        hex.setCustomValidity("");
+      } else if (value) {
+        hex.reportValidity();
+      }
     });
-    syncHex();
+    syncFromPicker();
   });
 
   // All / Popular / New / Saved tabs filter the actual designs.
