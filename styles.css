@@ -175,3 +175,34 @@ body{background:radial-gradient(ellipse at 12% 0%,rgba(151,119,177,.18),transpar
 .donate-page .donate-footer{border-color:#e5dcd2}
 .donate-page .donate-footer a{color:#655372}
 @media(max-width:650px){.core-emblem{width:205px;height:205px}.hero-art{transform:scale(.88)}.tag-samples,.gradient-samples{gap:6px}}
+
+
+/* Donation page shares the CORE site palette; only its layout is distinct. */
+.donate-page{background:radial-gradient(ellipse at 12% 0%,rgba(151,119,177,.18),transparent 38%),radial-gradient(ellipse at 95% 55%,rgba(132,164,145,.10),transparent 35%),#171421;color:#f7f1f8}
+.donate-page .donate-header{background:rgba(23,20,33,.82);border-color:rgba(236,220,246,.13);backdrop-filter:blur(18px)}
+.donate-page .donate-brand,.donate-page .donate-nav{color:#f7f1f8}
+.donate-page .donate-brand-mark{display:none}
+.donate-page .donate-nav a{color:#c3b8cb}
+.donate-page .donate-nav a:hover{color:#e4d2f5}
+.donate-page .donate-nav .donate-nav-active{background:rgba(200,169,232,.16);color:#e4d2f5;border:1px solid rgba(200,169,232,.22);border-radius:8px}
+.donate-page .store-home-link{background:linear-gradient(120deg,#d7bce9,#b8cbb8);border:0;color:#241e2c;border-radius:9px}
+.donate-page .donate-panel{background:linear-gradient(145deg,rgba(42,36,56,.96),rgba(30,27,41,.98));border:1px solid rgba(236,220,246,.13);border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.donate-page .donate-panel h1,.donate-page .donate-panel h2{color:#f7f1f8}
+.donate-page .donate-subtitle{color:#b9adbf}
+.donate-page .donate-table-head{background:rgba(200,169,232,.1);border:1px solid rgba(200,169,232,.15);color:#d5bce9;border-radius:8px}
+.donate-page .donate-empty{color:#b9adbf}
+.donate-page .donate-amount{color:#e4d2f5}
+.donate-page .donate-slider{accent-color:#c8a9e8}
+.donate-page .slider-limits{color:#b9adbf}
+.donate-page .amount-presets button{border-color:rgba(236,220,246,.18);background:#292438;color:#e8deed;border-radius:8px}
+.donate-page .amount-presets button:hover,.donate-page .amount-presets button.selected{background:#c8a9e8;border-color:#c8a9e8;color:#241e2c}
+.donate-page .donate-label{color:#d5bce9}
+.donate-page .custom-amount-wrap,.donate-page .username-input{border-color:rgba(236,220,246,.18);background:#171421;color:#f7f1f8;border-radius:8px}
+.donate-page .custom-amount-wrap input{color:#f7f1f8}
+.donate-page .username-input::placeholder{color:#887e91}
+.donate-page .donate-notice{background:rgba(200,169,232,.1);color:#c2b7ca;border:1px solid rgba(200,169,232,.13);border-radius:8px}
+.donate-page .donate-notice strong{color:#e4d2f5}
+.donate-page .donate-disabled-button{background:#30283e;border-color:rgba(220,197,239,.18);color:#b9adbf;border-radius:8px}
+.donate-page .donate-footer{border-color:rgba(236,220,246,.13);color:#a99db1}
+.donate-page .donate-footer a{color:#d8c2e9}
+@media(max-width:760px){.donate-page .donate-header .menu-toggle{color:#e8deed}.donate-page .donate-header .donate-nav{background:#211d2d;border-color:rgba(236,220,246,.13)}}
