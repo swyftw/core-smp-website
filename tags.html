@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171421"><meta name="description" content="Customize your CORE SMP player tag.">
+  <title>Player Tags — CORE SMP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="catalog-page tags-page">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header"><a class="brand" href="index.html"><span>CORE<span class="brand-muted"> SMP</span></span></a><button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#join">Server</a><a class="active" href="tags.html">Tags</a><a href="gradients.html">Gradients</a><a href="donate.html">Donations</a></nav>
+    <a class="button button-small button-outline header-join" href="index.html#join">Join server <span>↗</span></a>
+  </header>
+  <main class="catalog-main">
+    <section class="catalog-intro"><span class="eyebrow"><span class="live-dot"></span> MAKE YOUR NAME YOURS</span><h1>PLAYER <span class="gold">TAGS.</span></h1><p>Choose a tag style, customize the text and colours, and preview how it could look in-game.</p></section>
+    <section class="customizer-card">
+      <div class="customizer-heading"><div><h2>Tag Customization</h2><p>Preview your tag. Ordering is not available yet.</p></div><span class="preview-only-price">PREVIEW</span></div>
+      <div class="minecraft-preview"><span id="tag-live-preview" class="pixel-tag">[MYTHIC]</span></div>
+      <div class="customizer-controls">
+        <label>Tag Text <span>(max 12 characters)</span><input id="tag-text" type="text" maxlength="12" value="MYTHIC" placeholder="YOUR TAG"></label>
+        <label>First colour<input id="tag-color-one" type="color" value="#38bdf8"></label>
+        <label>Second colour<input id="tag-color-two" type="color" value="#a78bfa"></label>
+      </div>
+      <div class="preview-note">This is a visual preview only. No purchase or payment is taken.</div>
+    </section>
+    <section class="catalog-toolbar"><div class="catalog-tabs"><span class="catalog-tab active">All styles</span><span class="catalog-tab">Popular</span><span class="catalog-tab">Saved</span></div><input class="catalog-search" type="search" placeholder="Search tags..." aria-label="Search tags"></section>
+    <section class="design-grid" aria-label="Tag styles">
+      <article class="design-card"><div class="design-art"><span class="pixel-tag sample-arena">[ARENA]</span></div><div class="design-info"><strong>Arena</strong><span>Rose / pink</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-tag sample-fox">[FOX]</span></div><div class="design-info"><strong>Fox</strong><span>Amber / peach</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-tag sample-combat">[COMBAT]</span></div><div class="design-info"><strong>Combat</strong><span>Slate / silver</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-tag sample-blitz">[BLITZ]</span></div><div class="design-info"><strong>Blitz</strong><span>Blue / cyan</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-tag sample-strike">[STRIKE]</span></div><div class="design-info"><strong>Strike</strong><span>Gold / yellow</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-tag sample-fury">[FURY]</span></div><div class="design-info"><strong>Fury</strong><span>Violet / pink</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-tag sample-rampage">[RAMPAGE]</span></div><div class="design-info"><strong>Rampage</strong><span>Red / coral</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-tag sample-tactic">[TACTIC]</span></div><div class="design-info"><strong>Tactic</strong><span>Mint / teal</span></div></article>
+    </section>
+    <section class="catalog-switch"><div><span class="section-kicker">WANT MORE COLOUR?</span><h2>Style your whole name.</h2><p>Explore custom name gradients on their own page.</p></div><a class="button button-gold" href="gradients.html">EXPLORE GRADIENTS ↗</a></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="index.html">CORE<span class="brand-muted"> SMP</span></a><span>© <span id="year"></span> CORE SMP. Preview only.</span><a href="donate.html">Support CORE ↗</a></footer>
+  <script src="script.js"></script>
+</body></html>
