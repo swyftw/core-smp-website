@@ -1,22 +1,28 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f1e9">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171421">
   <meta name="description" content="Support CORE SMP and view the lifetime supporter leaderboard.">
-  <title>Donate — CORE SMP</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Donations — CORE SMP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="donate-page">
-  <header class="donate-header">
-    <a class="donate-brand" href="index.html"><span class="donate-brand-mark">C</span><strong>CORE SMP</strong></a>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CORE SMP home"><span class="brand-mark">C</span><span>CORE<span class="brand-muted"> SMP</span></span></a>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="donate-nav" aria-label="Main navigation">
-      <a href="index.html">⌂ Home</a><a href="index.html#join">▤ Server</a><a href="store.html">◇ Tags & Gradients</a><a class="donate-nav-active" href="donate.html">♡ Donate</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#join">Server</a>
+      <a href="store.html">Store</a>
+      <a class="active" href="donate.html">Donations</a>
     </nav>
-    <a class="store-home-link" href="store.html">Store Home</a>
+    <a class="button button-small button-outline header-join" href="index.html#join">Join server <span>↗</span></a>
   </header>
   <main class="donate-main">
     <section class="donate-panel leaderboard-panel">
@@ -42,7 +48,7 @@
       <button class="donate-disabled-button" type="button" disabled>DONATIONS NOT OPEN YET</button>
     </section>
   </main>
-  <footer class="donate-footer"><a href="index.html">CORE SMP</a><span>Lifetime rankings are based on verified donation records.</span><a href="https://discord.gg/znxwKpH2S9" target="_blank" rel="noopener noreferrer">Discord ↗</a></footer>
+  <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CORE<span class="brand-muted"> SMP</span></span></a><span>© <span id="year"></span> CORE SMP. All rights reserved.</span><a href="https://discord.gg/znxwKpH2S9" target="_blank" rel="noopener noreferrer">Discord ↗</a></footer>
   <script src="script.js"></script>
 </body>
 </html>
