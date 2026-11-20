@@ -56,6 +56,22 @@
     document.querySelectorAll(".design-card").forEach(card => { card.hidden = !card.textContent.toLowerCase().includes(term); });
   }));
 
+  document.querySelectorAll(".design-card[data-colors]").forEach(card => {
+    const applyPalette = () => {
+      const colors = card.dataset.colors.split(",");
+      const inputs = $("#tag-color-one") ? [$("#tag-color-one"),$("#tag-color-two")] : [$("#gradient-color-one"),$("#gradient-color-two"),$("#gradient-color-three")];
+      inputs.forEach((input,index) => {
+        if (input && colors[index]) { input.value = colors[index].trim(); input.dispatchEvent(new Event("input",{bubbles:true})); }
+      });
+      document.querySelectorAll(".design-card").forEach(item => item.classList.remove("is-selected"));
+      card.classList.add("is-selected");
+      playTone(680,.055,.02);
+      ($("#tag-live-preview") || $("#gradient-live-preview"))?.scrollIntoView({behavior:"smooth",block:"center"});
+    };
+    card.addEventListener("click",applyPalette);
+    card.addEventListener("keydown",event => { if(event.key==="Enter"||event.key===" "){event.preventDefault();applyPalette();} });
+  });
+
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
