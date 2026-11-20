@@ -35,10 +35,16 @@
     if (!tagPreview) return;
     const value = tagText?.value.trim().slice(0,12) || "YOUR TAG";
     tagPreview.textContent = "[" + value.toUpperCase() + "]";
-    tagPreview.style.setProperty("--tag-one", tagColorOne?.value || "#38bdf8");
-    tagPreview.style.setProperty("--tag-two", tagColorTwo?.value || "#a78bfa");
+    const first = tagColorOne?.value || "#38bdf8";
+    const second = tagColorTwo?.value || "#a78bfa";
+    tagPreview.style.setProperty("--tag-one", first);
+    tagPreview.style.setProperty("--tag-two", second);
+    tagPreview.style.backgroundImage = `linear-gradient(90deg,${first},${second})`;
   };
-  [tagText,tagColorOne,tagColorTwo].filter(Boolean).forEach(input => input.addEventListener("input",updateTagPreview));
+  [tagText,tagColorOne,tagColorTwo].filter(Boolean).forEach(input => {
+    input.addEventListener("input",updateTagPreview);
+    input.addEventListener("change",updateTagPreview);
+  });
   updateTagPreview();
 
   const gradientName = $("#gradient-username"), gradientPreview = $("#gradient-live-preview");
@@ -46,9 +52,14 @@
   const updateGradientPreview = () => {
     if (!gradientPreview) return;
     gradientPreview.textContent = gradientName?.value.trim().slice(0,16) || "YourName";
-    gradientColors.forEach((input,index) => gradientPreview.style.setProperty("--name-" + ["one","two","three"][index],input?.value || ["#34d399","#38bdf8","#818cf8"][index]));
+    const colors = gradientColors.map((input,index) => input?.value || ["#34d399","#38bdf8","#818cf8"][index]);
+    colors.forEach((value,index) => gradientPreview.style.setProperty("--name-" + ["one","two","three"][index],value));
+    gradientPreview.style.backgroundImage = `linear-gradient(90deg,${colors.join(",")})`;
   };
-  [gradientName,...gradientColors].filter(Boolean).forEach(input => input.addEventListener("input",updateGradientPreview));
+  [gradientName,...gradientColors].filter(Boolean).forEach(input => {
+    input.addEventListener("input",updateGradientPreview);
+    input.addEventListener("change",updateGradientPreview);
+  });
   updateGradientPreview();
 
   document.querySelectorAll(".catalog-search").forEach(search => search.addEventListener("input", () => {
@@ -78,13 +89,13 @@
     const color = document.getElementById(hex.dataset.colorFor);
     if (!color) return;
     const syncFromPicker = () => { hex.value = color.value.toUpperCase(); };
-    color.addEventListener("input", () => {
+    const handlePickerChange = () => {
       syncFromPicker();
-      if (tagColorOne || gradientColors.some(Boolean)) {
-        updateTagPreview();
-        updateGradientPreview();
-      }
-    });
+      updateTagPreview();
+      updateGradientPreview();
+    };
+    color.addEventListener("input", handlePickerChange);
+    color.addEventListener("change", handlePickerChange);
     hex.addEventListener("input", () => {
       const value = hex.value.trim();
       const normalized = value.startsWith("#") ? value : "#" + value;
