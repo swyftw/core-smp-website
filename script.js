@@ -72,6 +72,78 @@
     card.addEventListener("keydown",event => { if(event.key==="Enter"||event.key===" "){event.preventDefault();applyPalette();} });
   });
 
+
+  // HEX fields stay in sync with the native colour controls and live previews.
+  document.querySelectorAll(".color-hex[data-color-for]").forEach(hex => {
+    const color = document.getElementById(hex.dataset.colorFor);
+    if (!color) return;
+    const syncHex = () => { hex.value = color.value.toUpperCase(); };
+    color.addEventListener("input", syncHex);
+    hex.addEventListener("input", () => {
+      const value = hex.value.trim();
+      if (/^#?[0-9a-fA-F]{6}$/.test(value)) {
+        color.value = value.startsWith("#") ? value : "#" + value;
+        color.dispatchEvent(new Event("input", {bubbles:true}));
+        hex.setCustomValidity("");
+      } else if (value.length) {
+        hex.setCustomValidity("Enter a 6-digit HEX colour, for example #AABBCC.");
+      } else hex.setCustomValidity("");
+    });
+    hex.addEventListener("change", () => {
+      if (hex.value && !/^#?[0-9a-fA-F]{6}$/.test(hex.value.trim())) hex.reportValidity();
+      else syncHex();
+    });
+    syncHex();
+  });
+
+  // All / Popular / New / Saved tabs filter the actual designs.
+  const designCards = [...document.querySelectorAll(".design-card[data-colors]")];
+  const savedKey = "core-saved-designs";
+  const getSaved = () => { try { return JSON.parse(localStorage.getItem(savedKey) || "[]"); } catch { return []; } };
+  const saveCard = (card) => {
+    const key = card.querySelector(".design-info strong")?.textContent.trim() || "";
+    const saved = getSaved();
+    const next = saved.includes(key) ? saved.filter(item => item !== key) : [...saved, key];
+    localStorage.setItem(savedKey, JSON.stringify(next));
+    updateSaveButton(card);
+    applyActiveFilter();
+  };
+  const updateSaveButton = card => {
+    const key = card.querySelector(".design-info strong")?.textContent.trim() || "";
+    const saved = getSaved().includes(key);
+    const button = card.querySelector(".save-design");
+    if (button) { button.textContent = saved ? "★ Saved" : "☆ Save"; button.setAttribute("aria-pressed",String(saved)); }
+  };
+  designCards.forEach(card => {
+    if (!card.querySelector(".save-design")) {
+      const button = document.createElement("button");
+      button.type = "button"; button.className = "save-design";
+      button.addEventListener("click", event => { event.stopPropagation(); saveCard(card); });
+      card.appendChild(button);
+    }
+    updateSaveButton(card);
+  });
+  let activeFilter = "all";
+  const applyActiveFilter = () => {
+    const searchTerm = $(".catalog-search")?.value.trim().toLowerCase() || "";
+    designCards.forEach(card => {
+      const name = card.querySelector(".design-info strong")?.textContent.trim() || "";
+      const matchesFilter = activeFilter === "all" ||
+        (activeFilter === "popular" && card.dataset.popular === "true") ||
+        (activeFilter === "new" && card.dataset.new === "true") ||
+        (activeFilter === "saved" && getSaved().includes(name));
+      card.hidden = !matchesFilter || !card.textContent.toLowerCase().includes(searchTerm);
+    });
+  };
+  document.querySelectorAll(".catalog-tab[data-filter]").forEach(tab => tab.addEventListener("click", () => {
+    activeFilter = tab.dataset.filter;
+    document.querySelectorAll(".catalog-tab").forEach(item => item.classList.toggle("active",item === tab));
+    applyActiveFilter();
+    playTone(540,.04,.012);
+  }));
+  document.querySelectorAll(".catalog-search").forEach(search => search.addEventListener("input", applyActiveFilter));
+  applyActiveFilter();
+
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
