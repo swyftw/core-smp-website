@@ -335,3 +335,10 @@ body{background:radial-gradient(ellipse at 12% 0%,rgba(151,119,177,.18),transpar
 .color-hex{width:100%;height:30px;margin-top:6px;border:1px solid rgba(236,220,246,.2);border-radius:7px;background:#171421;color:#f7f1f8;padding:0 8px;font:600 10px ui-monospace,monospace;text-align:center}
 .save-design{display:block;margin:0 12px 12px;padding:7px 10px;border:1px solid rgba(216,194,233,.22);border-radius:7px;background:rgba(200,169,232,.09);color:#e4d2f5;font:700 9px var(--font);cursor:pointer}
 .save-design:hover{background:rgba(200,169,232,.18);border-color:rgba(216,194,233,.5)}
+
+/* CORE catalog icon details */
+.catalog-icon{display:inline-grid;place-items:center;width:22px;height:22px;margin:0 6px;border:1px solid rgba(216,194,233,.35);border-radius:7px;color:#d8c2e9;font-size:12px}
+.section-icon{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:8px;border:1px solid rgba(216,194,233,.24);border-radius:9px;background:rgba(200,169,232,.1);font-size:15px;vertical-align:middle}
+.control-label{display:flex;align-items:center;gap:6px;color:#e8deed!important;font-weight:800!important}
+.control-label>span{color:#d8c2e9;font-size:13px}
+.color-hex:focus{outline:2px solid rgba(200,169,232,.55);outline-offset:2px}
