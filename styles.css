@@ -269,3 +269,24 @@ body{background:radial-gradient(ellipse at 12% 0%,rgba(151,119,177,.18),transpar
 .collection-link>span:last-child{font-size:9px;font-weight:800;letter-spacing:1px;color:#e4d2f5}
 @media(max-width:760px){.catalog-main{width:calc(100% - 32px)}.design-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.customizer-controls,.gradient-controls{grid-template-columns:1fr 1fr}.customizer-controls label:first-child{grid-column:1/-1}.catalog-switch{align-items:flex-start;flex-direction:column}.collection-links{grid-template-columns:1fr}}
 @media(max-width:420px){.catalog-toolbar{align-items:stretch;flex-direction:column}.catalog-search{max-width:none;width:100%}.design-info{align-items:flex-start;flex-direction:column}.design-info span{text-align:left}.customizer-card{padding:16px}}
+
+
+/* Cumulative donation reward tiers */
+.donate-rewards{width:min(1040px,calc(100% - 40px));margin:38px auto 72px}
+.rewards-heading{text-align:center;margin-bottom:22px}
+.rewards-kicker{font-size:9px;letter-spacing:2px;font-weight:800;color:#c8a9e8}
+.rewards-heading h2{font:700 clamp(25px,4vw,36px)/1.1 var(--display);letter-spacing:-1px;margin:10px 0 7px;color:#f7f1f8}
+.rewards-heading h2 span{color:#d8c2e9}
+.rewards-heading p{font-size:12px;color:#b9adbf;margin:0}
+.reward-tier-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.reward-tier{position:relative;overflow:hidden;padding:22px 21px 20px;border:1px solid rgba(236,220,246,.15);border-radius:14px;background:linear-gradient(145deg,rgba(42,36,56,.97),rgba(30,27,41,.98));box-shadow:0 14px 38px rgba(0,0,0,.14)}
+.reward-tier:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--tier-accent)}
+.reward-vip{--tier-accent:#c68a65}.reward-vip-plus{--tier-accent:#c4cbd8}.reward-core{--tier-accent:#e2b85f}
+.reward-tier-top{display:flex;justify-content:space-between;align-items:center}
+.reward-medal{font-size:22px}.reward-threshold{font-size:12px;font-weight:800;color:#e4d2f5;background:rgba(200,169,232,.1);padding:7px 10px;border-radius:7px}
+.reward-tier h3{font:700 25px var(--display);margin:12px 0 13px;color:#fff}
+.reward-tier ul{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.reward-tier li{font-size:12px;color:#e4dce8;line-height:1.45}
+.reward-includes{font-size:10px;font-weight:800;color:#d8c2e9;margin:-5px 0 13px}
+.rewards-footnote{text-align:center;font-size:11px;line-height:1.7;color:#c2b7ca;margin:20px auto 0;max-width:720px}
+@media(max-width:720px){.reward-tier-grid{grid-template-columns:1fr}.donate-rewards{width:calc(100% - 32px)}.reward-tier{padding:20px}}
