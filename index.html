@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="CORE SMP — a Minecraft survival community. Join the server, meet the community, and explore the store.">
+  <title>CORE SMP — Your next adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CORE SMP home"><span class="brand-mark">C</span><span>CORE<span class="brand-muted"> SMP</span></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a><a href="#about">About</a><a href="store.html">Store</a><a href="#community">Community</a>
+    </nav>
+    <a class="button button-small button-outline header-join" href="#join">Join server <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> YOUR NEXT SURVIVAL ADVENTURE</div>
+        <h1>MAKE YOUR<br>MARK<span class="gold">.</span></h1>
+        <p class="hero-lead">Build your legacy. Find your people. Make every block count.</p>
+        <div class="hero-actions"><a class="button button-gold" href="#join">PLAY NOW <span>↗</span></a><a class="button button-quiet" href="#about">Discover CORE <span>↓</span></a></div>
+        <div class="hero-note"><span class="note-line"></span> A COMMUNITY BUILT TO LAST</div>
+      </div>
+      <div class="hero-art" aria-label="Abstract golden CORE emblem">
+        <div class="art-grid"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="core-emblem"><span>C</span></div><div class="art-caption"><span>CORE SMP</span><span>EST. COMMUNITY</span></div>
+        <div class="floating-chip chip-top">SURVIVE <b>✦</b></div><div class="floating-chip chip-bottom">BUILD <b>✦</b></div>
+      </div>
+    </section>
+
+    <section class="join-strip" id="join">
+      <div><span class="section-kicker">READY TO JUMP IN?</span><h2>Your world is waiting.</h2></div>
+      <div class="server-address"><span class="address-label">SERVER ADDRESS</span><strong id="server-ip">YOUR SERVER IP</strong></div>
+      <button class="button button-gold copy-button" id="copy-ip" type="button">COPY IP <span>▣</span></button>
+      <p class="copy-feedback" id="copy-feedback" aria-live="polite"></p>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="section-heading"><span class="section-kicker">THE CORE EXPERIENCE</span><h2>MORE THAN<br><span class="gold">JUST SURVIVAL.</span></h2></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-number">01 /</span><div class="feature-icon">⌂</div><h3>Make it yours</h3><p>Shape the world around you. Build something worth remembering, one block at a time.</p></article>
+        <article class="feature-card"><span class="feature-number">02 /</span><div class="feature-icon">◇</div><h3>Find your people</h3><p>Team up, make friends, trade stories, and become part of the CORE community.</p></article>
+        <article class="feature-card"><span class="feature-number">03 /</span><div class="feature-icon">✦</div><h3>Make every moment count</h3><p>Take on the world at your own pace and create your own reason to log back in.</p></article>
+      </div>
+    </section>
+
+    <section class="community-banner" id="community">
+      <div><span class="section-kicker">STAY CONNECTED</span><h2>THE WORLD IS BETTER<br><span class="gold">TOGETHER.</span></h2><p>Join the community for announcements, updates, and conversations.</p></div>
+      <a class="button button-outline" href="#" aria-label="Discord invite to be added">DISCORD INVITE COMING SOON ↗</a>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">C</span><span>CORE<span class="brand-muted"> SMP</span></span></a><span>© <span id="year"></span> CORE SMP. All rights reserved.</span><a href="store.html">Visit the store ↗</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
