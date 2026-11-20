@@ -29,6 +29,33 @@
     playTone(open ? 510 : 390, .045, .018);
   });
 
+  const tagText = $("#tag-text"), tagPreview = $("#tag-live-preview");
+  const tagColorOne = $("#tag-color-one"), tagColorTwo = $("#tag-color-two");
+  const updateTagPreview = () => {
+    if (!tagPreview) return;
+    const value = tagText?.value.trim().slice(0,12) || "YOUR TAG";
+    tagPreview.textContent = "[" + value.toUpperCase() + "]";
+    tagPreview.style.setProperty("--tag-one", tagColorOne?.value || "#38bdf8");
+    tagPreview.style.setProperty("--tag-two", tagColorTwo?.value || "#a78bfa");
+  };
+  [tagText,tagColorOne,tagColorTwo].filter(Boolean).forEach(input => input.addEventListener("input",updateTagPreview));
+  updateTagPreview();
+
+  const gradientName = $("#gradient-username"), gradientPreview = $("#gradient-live-preview");
+  const gradientColors = [$("#gradient-color-one"),$("#gradient-color-two"),$("#gradient-color-three")];
+  const updateGradientPreview = () => {
+    if (!gradientPreview) return;
+    gradientPreview.textContent = gradientName?.value.trim().slice(0,16) || "YourName";
+    gradientColors.forEach((input,index) => gradientPreview.style.setProperty("--name-" + ["one","two","three"][index],input?.value || ["#34d399","#38bdf8","#818cf8"][index]));
+  };
+  [gradientName,...gradientColors].filter(Boolean).forEach(input => input.addEventListener("input",updateGradientPreview));
+  updateGradientPreview();
+
+  document.querySelectorAll(".catalog-search").forEach(search => search.addEventListener("input", () => {
+    const term = search.value.trim().toLowerCase();
+    document.querySelectorAll(".design-card").forEach(card => { card.hidden = !card.textContent.toLowerCase().includes(term); });
+  }));
+
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
