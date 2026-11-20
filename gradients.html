@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171421"><meta name="description" content="Customize your CORE SMP name gradient.">
+  <title>Name Gradients — CORE SMP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="catalog-page gradients-page">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header"><a class="brand" href="index.html"><span>CORE<span class="brand-muted"> SMP</span></span></a><button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#join">Server</a><a href="tags.html">Tags</a><a class="active" href="gradients.html">Gradients</a><a href="donate.html">Donations</a></nav>
+    <a class="button button-small button-outline header-join" href="index.html#join">Join server <span>↗</span></a>
+  </header>
+  <main class="catalog-main">
+    <section class="catalog-intro"><span class="eyebrow"><span class="live-dot"></span> GIVE YOUR NAME SOME COLOUR</span><h1>NAME <span class="gold">GRADIENTS.</span></h1><p>Build a colour combination and preview how your Minecraft name could look in chat and above your character.</p></section>
+    <section class="customizer-card">
+      <div class="customizer-heading"><div><h2>Gradient Customization</h2><p>Preview your colours here. Ordering is not available yet.</p></div><span class="preview-only-price">PREVIEW</span></div>
+      <div class="minecraft-preview"><span id="gradient-live-preview" class="pixel-name">YourName</span></div>
+      <div class="customizer-controls gradient-controls">
+        <label>Minecraft Username<input id="gradient-username" type="text" maxlength="16" value="YourName" placeholder="YourName"></label>
+        <label>Colour 1<input id="gradient-color-one" type="color" value="#34d399"></label>
+        <label>Colour 2<input id="gradient-color-two" type="color" value="#38bdf8"></label>
+        <label>Colour 3<input id="gradient-color-three" type="color" value="#818cf8"></label>
+      </div>
+      <div class="preview-note">This is a visual preview only. No purchase or payment is taken.</div>
+    </section>
+    <section class="catalog-toolbar"><div class="catalog-tabs"><span class="catalog-tab active">All styles</span><span class="catalog-tab">New</span><span class="catalog-tab">Saved</span></div><input class="catalog-search" type="search" placeholder="Search gradients..." aria-label="Search gradients"></section>
+    <section class="design-grid" aria-label="Gradient styles">
+      <article class="design-card"><div class="design-art"><span class="pixel-name gradient-arena">YourName</span></div><div class="design-info"><strong>Arena Gradient</strong><span>Rose / magenta</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-name gradient-fox">YourName</span></div><div class="design-info"><strong>Fox Gradient</strong><span>Orange / amber</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-name gradient-combat">YourName</span></div><div class="design-info"><strong>Combat Gradient</strong><span>Slate / silver</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-name gradient-blitz">YourName</span></div><div class="design-info"><strong>Blitz Gradient</strong><span>Blue / cyan</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-name gradient-strike">YourName</span></div><div class="design-info"><strong>Strike Gradient</strong><span>Gold / yellow</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-name gradient-fury">YourName</span></div><div class="design-info"><strong>Fury Gradient</strong><span>Violet / pink</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-name gradient-rampage">YourName</span></div><div class="design-info"><strong>Rampage Gradient</strong><span>Red / coral</span></div></article>
+      <article class="design-card"><div class="design-art"><span class="pixel-name gradient-tactic">YourName</span></div><div class="design-info"><strong>Tactic Gradient</strong><span>Mint / teal</span></div></article>
+    </section>
+    <section class="catalog-switch"><div><span class="section-kicker">NEED A PLAYER TAG TOO?</span><h2>Complete your identity.</h2><p>Browse custom tag styles and colour options.</p></div><a class="button button-gold" href="tags.html">EXPLORE TAGS ↗</a></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="index.html">CORE<span class="brand-muted"> SMP</span></a><span>© <span id="year"></span> CORE SMP. Preview only.</span><a href="donate.html">Support CORE ↗</a></footer>
+  <script src="script.js"></script>
+</body></html>
