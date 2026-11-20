@@ -319,3 +319,12 @@ body{background:radial-gradient(ellipse at 12% 0%,rgba(151,119,177,.18),transpar
 .design-card[hidden]{display:none}
 @media(max-width:850px){.identity-section{grid-template-columns:1fr;gap:25px;margin:75px auto}.hero{min-height:unset;padding-top:65px;padding-bottom:65px}}
 @media(max-width:560px){.identity-section{padding:0 20px}.identity-cards{grid-template-columns:1fr}.hero h1{font-size:clamp(52px,15vw,78px)}.join-strip{padding:22px}}
+
+
+/* CORE-original palette labels and visible colour swatches */
+.palette-details{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:0 12px 13px}
+.palette-details .swatch{display:inline-block;width:13px;height:13px;border-radius:4px;background:var(--swatch);border:1px solid rgba(255,255,255,.42);box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+.palette-details code{font:600 8px/1.2 var(--font);letter-spacing:.1px;color:#cfc3d6;margin-right:3px}
+.design-info{padding-bottom:9px}
+.design-art .pixel-tag,.design-art .pixel-name{font-size:clamp(17px,2.1vw,26px);text-shadow:2px 2px 0 rgba(30,27,41,.5)}
+@media(max-width:420px){.palette-details{gap:5px}.palette-details code{font-size:7px}}
